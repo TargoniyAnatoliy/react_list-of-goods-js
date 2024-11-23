@@ -53,7 +53,7 @@ export const App = () => {
         <button
           type="button"
           onClick={() => setSortField(SORT_BY_NAME)}
-          className={`button ${sortField === SORT_BY_NAME ? 'is-light' : 'is-info'}`}
+          className={`button is-info ${sortField === SORT_BY_NAME ? '' : 'is-light'}`}
         >
           Sort alphabetically
         </button>
@@ -61,7 +61,7 @@ export const App = () => {
         <button
           type="button"
           onClick={() => setSortField(SORT_BY_LENGTH)}
-          className={`button ${sortField === SORT_BY_LENGTH ? 'is-light' : 'is-info'}`}
+          className={`button is-success ${sortField === SORT_BY_LENGTH ? '' : 'is-light'}`}
         >
           Sort by length
         </button>
@@ -69,7 +69,7 @@ export const App = () => {
         <button
           type="button"
           onClick={() => setReverse(!reverse)}
-          className={`button ${reverse ? 'is-light' : 'is-warning'}`}
+          className={`button is-warning ${reverse ? '' : 'is-light'}`}
         >
           Reverse
         </button>
@@ -81,7 +81,7 @@ export const App = () => {
               setReverse(false);
               setSortField('');
             }}
-            className="button is-danger is-light"
+            className="button is-danger"
           >
             Reset
           </button>
@@ -90,7 +90,9 @@ export const App = () => {
 
       <ul>
         {goodsToShow.map(good => (
-          <li data-cy="Good" key={good}>{good}</li>
+          <li data-cy="Good" key={good}>
+            {good}
+          </li>
         ))}
       </ul>
     </div>
